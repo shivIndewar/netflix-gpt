@@ -5,9 +5,13 @@
 - Login Form
 - Form vaidation
 - useRef Hook
-
-
-
+- setup firebase 
+- deploy app on firebase
+- Signup user using firebase
+- Implement sing/ signup user api
+- Created redux store with user slice
+- Implemented signout
+- Updated the profile using firebase
 
 # Features 
 - Login/Signup page
@@ -24,3 +28,13 @@
     - search bar
     - Movie suggestions
     
+
+# firebase commands to integrate
+  - install firebase cli
+        - npm install -g firebase-tools
+  - Firebase login 
+        - firebase login
+  - initialize firebase 
+        -  firebase init (then select the proper hosting)
+  - Deploy firebase 
+        - firebase deploy      
