@@ -8,9 +8,10 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import {  } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../../../utils/user store/userSlice";
+import { USER_AVATAR } from "../../../utils/constant";
 
 
 const Login = () => {
@@ -19,7 +20,6 @@ const Login = () => {
   const password = useRef(null);
   const username = useRef(null);
   const [errorMessage, seterrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();  
   const handleSingInSignUp = () => {
     const message = checkValidData(
@@ -29,11 +29,8 @@ const Login = () => {
       isSignInForm
     );
     seterrorMessage(message);
-    console.log("before return");
     if (message) return;
-    console.log("Not returned yet");
     if (!isSignInForm) {
-      console.log("calling firebase api");
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
@@ -43,13 +40,11 @@ const Login = () => {
           const user = userCredential.user;
 
           updateProfile(user, {
-            displayName: username?.current?.value, photoURL: "https://lh3.googleusercontent.com/ogw/AF2bZyjnyO4RhR-MLQDP6I-I_G97QNoJd2syQWknqDemN12ORZA=s64-c-mo"
+            displayName: username?.current?.value, photoURL: USER_AVATAR
           }).then(() => {
 
             const {uid, email, displayName, photoURL} = auth.currentUser; 
             dispatch(addUser({uid : uid, email: email, displayName : displayName, photoURL: photoURL}));
-            navigate("/browse");
-            console.log(user);
           }).catch((error) => {
             seterrorMessage(error);
           });
@@ -60,8 +55,6 @@ const Login = () => {
     } else {
       signInWithEmailAndPassword(auth,  email.current.value, password.current.value)
         .then((userCredential) => {
-          navigate("/browse");
-          console.log("Signed In User - " , userCredential.user);
         })
         .catch((error) => {
           seterrorMessage(error.code+"-"+error.message);
