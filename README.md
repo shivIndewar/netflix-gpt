@@ -53,3 +53,6 @@
         -  firebase init (then select the proper hosting)
   - Deploy firebase 
         - firebase deploy      
+
+ # TMDB - The movie database
+        
