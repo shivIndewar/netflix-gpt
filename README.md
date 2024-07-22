@@ -25,7 +25,9 @@
 - Fetch data for trailer
 - Embeded the youtube video and make it autoplay and mute
 - used tailwind css to improve the user experience
-
+- Fetched popular, toprated and upcomming movies 
+- Created custome hooks for popular, toprated and upcomming
+- Improved user experience using tailwind css
 
 
 # Features 
