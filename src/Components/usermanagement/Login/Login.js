@@ -11,7 +11,7 @@ import {
 import {  } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../../../utils/user store/userSlice";
-import { USER_AVATAR } from "../../../utils/constant";
+import { BG_URL, USER_AVATAR } from "../../../utils/constant";
 
 
 const Login = () => {
@@ -71,7 +71,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/8728e059-7686-4d2d-a67a-84872bd71025/e90516bd-6925-4341-a6cf-0b9f3d0c140a/IN-en-20240708-POP_SIGNUP_TWO_WEEKS-perspective_WEB_34324b52-d094-482b-8c2a-708dc64c9065_large.jpg"
+          src={BG_URL}
           alt="background"
         ></img>
       </div>
