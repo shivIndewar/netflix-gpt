@@ -45,6 +45,11 @@
     - search bar
     - Movie suggestions
     
+# GPT Search Feature
+  - Created GPT search bar
+  - Implemented multilangual feature in the app
+  - Integrate GPT API's (get Open API key)
+
 
 # firebase commands to integrate
   - install firebase cli

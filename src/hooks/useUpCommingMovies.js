@@ -4,7 +4,6 @@ import { addUpCommingMovies } from "../utils/user store/movieSlice";
 import { useEffect } from "react";
 
 const useUpCommingMovies =()=>{
-    console.log("use TopRated Movies called");
     const dispatch = useDispatch();
     const getUpcommingMoviesList = async ()=>{
     const movies = await fetch(UPCOMMING_MOVIES, OPTIONS);

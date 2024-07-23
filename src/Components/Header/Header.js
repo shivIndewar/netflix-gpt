@@ -8,17 +8,27 @@ import { addUser, removeUser } from "../../utils/user store/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES, USER_AVATAR } from "../../utils/constant";
 import { toggleGPTSearchView } from "../../utils/user store/gptSlice";
 import { addGlobalLanguage } from "../../utils/user store/languageSlice";
+import lang from "../../utils/languageConstant";
 
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
+  const showGPTSearch =useSelector((store)=> store.gpt.showGPTSearch);
   const handleGptMode = () => {
     dispatch(toggleGPTSearchView());
   };
-
+  dispatch(addGlobalLanguage(lang.en));
   const handleLanguageChange = (e) => {
-    dispatch(addGlobalLanguage(e.target.value));
+    if(e.target.value ==='en'){
+       dispatch(addGlobalLanguage(lang.en));
+    }
+    else if(e.target.value ==='hindi'){
+       dispatch(addGlobalLanguage(lang.hinid));
+    }
+    else if(e.target.value ==='spanish'){
+       dispatch(addGlobalLanguage(lang.spanish));
+    }
   };
 
   useEffect(() => {
@@ -47,7 +57,6 @@ const Header = () => {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        console.log("sign out successfully");
         navigate("/");
       })
       .catch((error) => {
@@ -60,19 +69,20 @@ const Header = () => {
 
       {user && (
         <div className="flex p-2">
-          <select
+
+          {showGPTSearch && <select
             onChange={handleLanguageChange}
-            className="py-2 px-2 my-2 mx-2"
+            className="p-2 m-2 bg-gray-900 text-white"
           >
             {SUPPORTED_LANGUAGES.map((lang) => (
-              <option value={lang.identifier}>{lang.name}</option>
+              <option key={lang.name} value={lang.identifier}>{lang.name}</option>
             ))}
-          </select>
+          </select>}
           <button
             className="bg-purple-800 text-white py-2 px-2 my-2 mx-2 rounded-xl hover:bg-opacity-50"
             onClick={handleGptMode}
           >
-            GPT Search
+            {showGPTSearch ? "Home Page" :  "GPT Search"}
           </button>
           <img
             className="w-10 h-10 rounded-3xl"
