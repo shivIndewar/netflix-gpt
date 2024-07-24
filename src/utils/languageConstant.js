@@ -1,15 +1,15 @@
 const lang = {
     en:{
         search:"search",
-        gptPlaceHolder :"what would you like to watch today?"
+        gptPlaceHolder :"You can search one or , separated movies to get prompt movies"
     },
     hinid :{
         search:"खोज",
-        gptPlaceHolder :"आज आप क्या देखना चाहेंगे?"
+        gptPlaceHolder :"शीघ्र फिल्में प्राप्त करने के लिए आप एक या अल्पविराम से अलग की गई फिल्में खोज सकते हैं"
     },
     spanish :{
         search:"buscar",
-        gptPlaceHolder :"¿Qué te gustaría ver hoy?"
+        gptPlaceHolder :"Puede buscar películas separadas por una o comas para obtener películas rápidas"
     },
 };
 
