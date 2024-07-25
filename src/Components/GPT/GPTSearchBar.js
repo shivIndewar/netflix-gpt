@@ -7,7 +7,6 @@ const GPTSearchBar = () => {
   const serchText = useRef("Test");
   const dispatch = useDispatch();
   const handleGPTSearchKey = async () => {
-    console.log("called handleGPTSearchKey");
     // open api call to fetch the suggessions it's not working as restricted to add credit card to start the billing
     // const query =
     //   "Act as a movie recomendatnio system and suggest some movies for the query :" +
