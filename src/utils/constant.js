@@ -10,7 +10,7 @@ export const OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZTkxNWZiZDY4Y2YxNDhkY2NjMmRiZWQwOTg3MDE4NiIsIm5iZiI6MTcyMTM5MTc5OS4xMjI1ODEsInN1YiI6IjY2OWE1OWE1OWY5Yzk4MWRhMTk0MTUyNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.d_jRpYriRsqiIwxMlD1uB1CAQ5qOxtfjA7T-NHRVgpI",
+      "Bearer "+process.env.REACT_AAP_TMDB_KEY,
   },
 };
 
@@ -32,3 +32,5 @@ export const BG_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/8728e059-7686-
 
 export const SUPPORTED_LANGUAGES = [{identifier:"en", name:"English"},{identifier:"hindi", name:"Hindi"},{identifier:"spanish", name:"Spaninsh"}];
 export const SEARCH_MOVIES = "https://api.themoviedb.org/3/search/movie?query=Andaz&include_adult=false&language=en-US&page=1";
+
+export const DEFAULT_MOVIE_POSTER = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTShkml07IJkqm-kVI9W2XwnbaIUbVbKQVIPw&s";
