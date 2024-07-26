@@ -64,5 +64,5 @@
  # TMDB - The movie database
  # Overall project snaps -
 <h1>Netflix GPT</h1>
-
+<img src="login.png"/>
  
