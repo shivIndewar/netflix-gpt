@@ -67,6 +67,6 @@
 <img src="login.png"/>
 <img src="signup.png"/> 
 <img src="Trailer Container.png"/>
-<img src="browse movies.png.png"/>
+<img src="browse movies.png"/>
 <img src="search movies.png"/>
 
