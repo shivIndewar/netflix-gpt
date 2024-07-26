@@ -65,4 +65,8 @@
  # Overall project snaps -
 <h1>Netflix GPT</h1>
 <img src="login.png"/>
- 
+<img src="signup.png"/> 
+<img src="Trailer Container.png"/>
+<img src="browse movies.png.png"/>
+<img src="search movies.png"/>
+
